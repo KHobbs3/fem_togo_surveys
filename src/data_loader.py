@@ -52,6 +52,8 @@ DRIVE_FILE_IDS = {
     "culture_clusters_centroids.csv":     "1spqP43vCg_aj_ihfzRaApwv2fxos14io",
     "culture_clusters_profile.csv":       "1j5EBZBKaUs6zuGByJWDcUas1UUxRkheq",
     "culture_clusters_elbow.csv":         "1CPK6t0veNPLWEXq92QDfYHUwI8anDzGp",
+    # Drivers & barriers table (dated file; see load_drivers_barriers)
+    "drivers_barriers_table.csv":         "1Q_lVl3vF-MwhMS5FoAA_s3jn_AkEekdL",
     # Respondents / statements
     "respondents_profile.csv":            "1CA2MGH2Mahfh0g-gg6r4nP3sbeG0fIy2",
     "statements_heatmap.csv":             "1ulpvgRj8k4mja4VVZClGwF75KZ3pfmBY",
@@ -281,7 +283,11 @@ def load_culture_clusters_elbow():
 # Togo's notebook labels its geographic split "DEPARTMENT" (GEO_SPLIT_LABEL);
 # those columns are renamed to the "REGION: ..." names the page reads.
 def load_drivers_barriers():
-    df = _load(_latest(f"{COUNTRY}_drivers-barriers_table_[0-9]*.csv"))
+    # The local file is dated, so the Drive copy is keyed on a fixed name instead;
+    # it wins when set, and the newest local file is the fallback.
+    df = _load("drivers_barriers_table.csv") if "drivers_barriers_table.csv" in DRIVE_FILE_IDS else None
+    if df is None:
+        df = _load(_latest(f"{COUNTRY}_drivers-barriers_table_[0-9]*.csv"))
     if df is not None:
         df = df.rename(columns=lambda c: re.sub(r"^DEPARTMENT:", "REGION:", c))
     return df
