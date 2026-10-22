@@ -13,14 +13,10 @@ from src.data_loader import (
     load_personas_centroids_by_region,
     load_personas_profile_by_region,
     load_personas_elbow_by_region,
-    load_personas_centroids_by_region_ns,
-    load_personas_profile_by_region_ns,
-    load_personas_elbow_by_region_ns,
     load_culture_clusters_centroids,
     load_culture_clusters_profile,
     load_culture_clusters_elbow,
     REGIONS,
-    REGION_NS,
 )
 from src.translations import tr
 
@@ -461,7 +457,7 @@ the way it is for the gender split.
 based on category frequency distributions to reduce sensitivity to random starting
 points), with 5 independent runs to improve stability. Results are fully reproducible
 (fixed random seed). The gender split and overall clustering use a fixed 3 clusters;
-region splits (both 4-way and North/South) instead auto-select k per region from that
+the region split instead auto-selects k per region from that
 region's own elbow curve (2 vs. 3+ clusters is a real difference between regions, not
 just noise — see the elbow plot below).
 
@@ -473,16 +469,15 @@ weighted N) is shown for each persona. Individual-level data is not stored or di
 
     st.subheader("Personas by group")
 
-    # ── Split selector: Gender, Region (4-way), or Region North/South ─────────
+    # ── Split selector: Gender or Region ──────────────────────────────────────
     split_choice = st.radio(
         "Split personas by",
-        ["Gender", "Region", "Region (North/South)"],
+        ["Gender", "Region"],
         horizontal=True,
     )
     split_col = {
         "Gender": "gender",
         "Region": "region",
-        "Region (North/South)": "region_ns",
     }[split_choice]
 
     if split_col == "gender":
@@ -492,19 +487,12 @@ weighted N) is shown for each persona. Individual-level data is not stored or di
         label_map      = GENDER_DISPLAY
         missing_msg    = _MISSING
         region_order   = None
-    elif split_col == "region":
+    else:  # region
         df_centroids_s = load_personas_centroids_by_region()
         df_profile_s   = load_personas_profile_by_region()
         df_elbow       = load_personas_elbow_by_region()
         label_map      = {}
         region_order   = REGIONS
-        missing_msg = _MISSING
-    else:  # region_ns
-        df_centroids_s = load_personas_centroids_by_region_ns()
-        df_profile_s   = load_personas_profile_by_region_ns()
-        df_elbow       = load_personas_elbow_by_region_ns()
-        label_map      = {}
-        region_order   = REGION_NS
         missing_msg = _MISSING
 
     if df_centroids_s is None or df_centroids_s.empty:
@@ -520,7 +508,7 @@ weighted N) is shown for each persona. Individual-level data is not stored or di
     groups_in_data = df_centroids_s[split_col].unique().tolist()
     if region_order:
         # Prefer the canonical region order over whatever order they appear
-        # in the data (REGIONS or REGION_NS).
+        # in the data (REGIONS).
         groups_in_data = [g for g in region_order if g in groups_in_data] + \
                          [g for g in groups_in_data if g not in region_order]
     tab_labels = [tr(label_map.get(g, g)) for g in groups_in_data]

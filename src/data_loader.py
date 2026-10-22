@@ -16,7 +16,47 @@ COUNTRY = "Togo"
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 DRIVE_FILE_IDS = {
-    # "respondents_profile.csv": "<FILE_ID>",
+    # Access
+    "access_affordability.csv":           "1AKgtJzSbt1Rj9Tt33dBS5hNECpC8dXTf",
+    "access_composite.csv":               "1AeZTKtNKp76hrTShc5PksnMn4CbW1Q9r",
+    "access_stockout_responses.csv":      "1lBHcRMcelfy1yVrKQZKBxgpyPnRjEj16",
+    "access_stockouts.csv":               "1AePqa9TQIbACRaRqysFtcoKAvm7F_Nto",
+    "access_travel.csv":                  "1ALp-GdNC23dob39KBL-kuYf5R6PRGa3u",
+    # Family planning
+    "fp_funnel.csv":                      "1hN9i6b8sLyeuYFtvmiyfPswENjY4rnku",
+    "fp_intent.csv":                      "1_ktwblcmMHzbkUvVMD24wWhYsLSiV8yT",
+    "fp_methods.csv":                     "1SsvfRgIKjpr2PyR72eWI9gisLW_4fsRx",
+    "fp_nonuse_reasons.csv":              "1UXuoAgSwTSwZK4Gy4IL0CPAZP2_zu13E",
+    "fp_reason_use.csv":                  "1i8KMoMBjkNHWfjP8YgrRwQRXaIHityXT",
+    "fp_timing.csv":                      "1LOJSAJA7XwXTzGIL7d_SRTrahEzWyDJL",
+    "fp_unmet.csv":                       "1Lg8QA8Ylxgoar4zAo3NSE0loDPiSuEQL",
+    # Personality
+    "personality_decision_confident.csv": "1QM2o-IDvN_LDgAd8Xf21dwPqp54vuMd5",
+    "personality_forming_beliefs.csv":    "1Xl9-4p-NAnpFEOX0xI8RoOdMmdTH0pfO",
+    "personality_goals_achievable.csv":   "1V4AejPLVFK5M7TpBfVlkswornfp6ryo9",
+    "personality_life_goals.csv":         "1ngUQinCtv7q3oDAju4ghAOQuly8d-FtN",
+    "personality_likeable_traits.csv":    "1DV-URS9FRQb7JcJW70d9eHSArpNYdqhF",
+    "personality_role_models.csv":        "1w7cS9QMUlywVk3u9dHX4FIXdybRB7z1x",
+    "personality_wellbeing.csv":          "1xmjhGKDbYNu1PPG5aEBiObp1BjbMneML",
+    # Personas
+    "personas_centroids.csv":             "1NGd7OX6wKe-T3SBsTf3F7rwkAYFtvCFI",
+    "personas_profile.csv":               "1z2dE8k__DwEXBoDJ5JYbBguvJtXseObp",
+    "personas_elbow.csv":                 "1EJKggaRpLw8AFEPePNzTBW8dfiaEzSep",
+    "personas_centroids_by_gender.csv":   "1ktNCeVPtLx9zylSdDByn731Gy1SSsdpQ",
+    "personas_profile_by_gender.csv":     "1e11tKtpeuSIHPoxZWmL1RYaQBs7H_M1R",
+    "personas_centroids_by_region.csv":   "1z9VibynsAXF3alpfVKhLtzal6m0NwsSt",
+    "personas_profile_by_region.csv":     "1t0rtOaOcXRPGRGMotz8fIk6GiEHdZ7TM",
+    "personas_elbow_by_region.csv":       "1bPAwOKsUzQoHvVXC8dvGBjVm2g-JIoZ3",
+    "culture_clusters_centroids.csv":     "1spqP43vCg_aj_ihfzRaApwv2fxos14io",
+    "culture_clusters_profile.csv":       "1j5EBZBKaUs6zuGByJWDcUas1UUxRkheq",
+    "culture_clusters_elbow.csv":         "1CPK6t0veNPLWEXq92QDfYHUwI8anDzGp",
+    # Respondents / statements
+    "respondents_profile.csv":            "1CA2MGH2Mahfh0g-gg6r4nP3sbeG0fIy2",
+    "statements_heatmap.csv":             "1ulpvgRj8k4mja4VVZClGwF75KZ3pfmBY",
+    # Label tables (also versioned in data/; read by src/translations.py)
+    "statement_labels.csv":               "1aEJnx_ZcHcQEu9A-P4K-6In-yOjVsNeH",
+    "driver_barrier_translations.csv":    "1rbYmPmbWZo1xijevno7XbmXY9vr_KF38",
+    "radio_translations.csv":             "1WYqe-MqD_M1OVHtpGjbRM7xokOimQxUF",
 }
 
 
@@ -193,20 +233,6 @@ def load_personas_elbow_by_region():
     return _load("personas_elbow_by_region.csv", index_col=0)
 
 
-# 2-way North/South split -- North = Centrale + Kara, South = Maritime + Plateaux
-# (REGION_TO_NORTH_SOUTH in pipeline/config.py). k is auto-selected per group.
-def load_personas_centroids_by_region_ns():
-    return _load("personas_centroids_by_region_ns.csv", index_col=0)
-
-
-def load_personas_profile_by_region_ns():
-    return _load("personas_profile_by_region_ns.csv", index_col=0)
-
-
-def load_personas_elbow_by_region_ns():
-    return _load("personas_elbow_by_region_ns.csv", index_col=0)
-
-
 # Standalone culture clustering (religion, life goals, top driver/barrier --
 # region deliberately excluded as a clustering input, see
 # CULTURE_CLUSTERING_VARS in pipeline/config.py).
@@ -288,6 +314,3 @@ URBAN_RURAL = ["Rural", "Semi-urbain", "Urbain"]
 # Regions = Togo's sampling strata (`province`), south to north. Mirrors
 # REGIONS / PROVINCE_TO_REGION in pipeline_output/pipeline/config.py.
 REGIONS = ["Maritime", "Plateaux", "Centrale", "Kara"]
-
-# 2-way North/South grouping, mirrors NORTH_SOUTH_REGIONS in pipeline/config.py.
-REGION_NS = ["North", "South"]

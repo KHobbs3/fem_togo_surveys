@@ -68,6 +68,32 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
+# ── Togo flag banner ──────────────────────────────────────────────────────────
+# Full-width strip in the flag's pattern: five green/yellow stripes, with the
+# red square canton (top three stripes tall) and white star at the left. Sets
+# the app apart from the Benin and Niger versions at a glance.
+TOGO_GREEN  = "#006A4E"
+TOGO_YELLOW = "#FFCE00"
+TOGO_RED    = "#D21034"
+FLAG_STRIPE_PX = 10
+
+_stripes = ", ".join(
+    f"{TOGO_GREEN if i % 2 == 0 else TOGO_YELLOW} {i * 20}% {(i + 1) * 20}%" for i in range(5)
+)
+_canton = FLAG_STRIPE_PX * 3
+st.markdown(f"""
+<div style="position:relative;height:{FLAG_STRIPE_PX * 5}px;margin:0 0 0.6rem;border-radius:4px;
+            overflow:hidden;background:linear-gradient(to bottom, {_stripes});"
+     role="img" aria-label="Flag of Togo">
+    <div style="position:absolute;top:0;left:0;width:{_canton}px;height:{_canton}px;background:{TOGO_RED};
+                display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 100 100" width="{_canton * 0.7}" height="{_canton * 0.7}">
+            <polygon fill="#FFFFFF" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/>
+        </svg>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 # ── Title ─────────────────────────────────────────────────────────────────────
 title_col, toggle_col, data_col = st.columns([3, 1.3, 0.3])
 with title_col:

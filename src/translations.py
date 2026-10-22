@@ -17,17 +17,16 @@ Usage in a page module:
 """
 
 import re
-from pathlib import Path
 
 import streamlit as st
 import pandas as pd
 
-# Resolve relative to this file, not the process cwd -- these translation
-# tables are shipped in the repo (small, static, versioned alongside the code),
-# unlike the pipeline outputs in data/, which are gitignored. They come from the
-# shared French questionnaire; `python -m pipeline.check_labels` (pipeline_output/)
-# lists any label Togo's form words differently.
-_DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+from src.data_loader import _load
+
+# The translation tables are read with data_loader._load (Drive ID if set in
+# DRIVE_FILE_IDS, else the copy versioned in the app's data folder). They come
+# from the shared French questionnaire; `python -m pipeline.check_labels`
+# (pipeline_output/) lists any label Togo's form words differently.
 
 DISCLAIMER_TEXT = (
     "🌐 English text is AI-translated (Claude) from the original French/Ewe survey "
@@ -93,7 +92,7 @@ def _gender_en(text):
 @st.cache_data(show_spinner=False)
 def _load_statement_dict():
     try:
-        df = pd.read_csv(_DATA_DIR / "statement_labels.csv")
+        df = _load("statement_labels.csv")
         return dict(zip(df["label_fr"], df["label_en"]))
     except Exception:
         return {}
@@ -102,7 +101,7 @@ def _load_statement_dict():
 @st.cache_data(show_spinner=False)
 def _load_driver_barrier_dict():
     try:
-        df = pd.read_csv(_DATA_DIR / "driver_barrier_translations.csv")
+        df = _load("driver_barrier_translations.csv")
         return dict(zip(df["label_fr"], df["label_en"]))
     except Exception:
         return {}
@@ -114,7 +113,7 @@ def _load_radio_dict():
     # etc.) -- keyed on the French-only label left after etl_radio.py's
     # strip_fon() runs, same convention as the other tables here.
     try:
-        df = pd.read_csv(_DATA_DIR / "radio_translations.csv")
+        df = _load("radio_translations.csv")
         return dict(zip(df["label_fr"], df["label_en"]))
     except Exception:
         return {}
