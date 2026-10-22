@@ -1,4 +1,6 @@
+import io
 import re
+import urllib.request
 from pathlib import Path
 
 import pandas as pd
@@ -67,11 +69,36 @@ def _latest(pattern):
     return matches[-1] if matches else pattern
 
 
-@st.cache_data(show_spinner=False)
+DRIVE_URL = "https://drive.usercontent.google.com/download?export=download&confirm=t&id="
+
+
+def _read_drive(name, file_id, **kwargs):
+    """CSV from Drive, or None (with an on-page error) if Drive sends a web page
+    instead -- what happens when the file isn't shared as "Anyone with the link"."""
+    request = urllib.request.Request(DRIVE_URL + file_id, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            raw = response.read()
+    except Exception as exc:
+        st.error(f"Couldn't download {name} from Google Drive ({exc}).")
+        return None
+    if raw.lstrip()[:15].lower().startswith((b"<!doctype", b"<html")):
+        st.error(
+            f"Google Drive returned a web page instead of {name}. In Drive, set the file's "
+            "sharing to \"Anyone with the link\" (Viewer) and check its ID in DRIVE_FILE_IDS."
+        )
+        return None
+    return pd.read_csv(io.BytesIO(raw), **kwargs)
+
+
+# ttl: a file whose Drive sharing gets fixed shows up within 10 minutes, no restart.
+@st.cache_data(show_spinner=False, ttl="10m")
 def _load(name, **kwargs):
     file_id = DRIVE_FILE_IDS.get(name)
     if file_id:
-        return pd.read_csv("https://drive.google.com/uc?export=download&id=" + file_id, **kwargs)
+        df = _read_drive(name, file_id, **kwargs)
+        if df is not None:
+            return df
     path = DATA_DIR / name
     if not path.exists():
         return None
