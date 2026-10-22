@@ -61,6 +61,9 @@ DRIVE_FILE_IDS = {
     "statement_labels.csv":               "1aEJnx_ZcHcQEu9A-P4K-6In-yOjVsNeH",
     "driver_barrier_translations.csv":    "1rbYmPmbWZo1xijevno7XbmXY9vr_KF38",
     "radio_translations.csv":             "1WYqe-MqD_M1OVHtpGjbRM7xokOimQxUF",
+    # Radio
+    "radio_by_station.csv":               "1NBj3dEm6xNNv9lWoQsB61vWmFdC2iLmr",
+    "radio_by_state.csv":                 "1e1OhI-fsBZYZz9j4fBV3US2_w4rES-v3"
 }
 
 
