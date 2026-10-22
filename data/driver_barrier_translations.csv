@@ -1,0 +1,99 @@
+list_name,value,label_fr,label_en
+barriers,-99,Je préfère ne pas répondre,Prefer not to answer
+barriers,-88,Je ne sais pas,I don’t know
+barriers,-22,"Autres raisons non mentionnées ici, Veuillez préciser",Others not mentioned here
+barriers,0,Non actif sexuellement,Not sexually active
+barriers,1,Manque de moyens financiers pour accéder aux contraceptifs : les produits sont trop chers,Lack of funding to access contraceptives: Products are too expensive
+barriers,2,Manque de moyens financiers pour accéder aux contraceptifs : non spécifié,Lack of funding to access contraceptives: Unspecified
+barriers,3,Manque d'accès : l’établissement de santé est trop éloigné,Lack of access: Health center is too far away
+barriers,4,Manque de connaissances : ne sait pas comment choisir une méthode adaptée,Lack of knowledge: On how to choose a suitable method
+barriers,5,Manque de connaissances : ne connaît pas les avantages,Lack of knowledge: On benefits
+barriers,6,Manque de connaissances : ne connaît pas les différentes méthodes disponibles,Lack of knowledge: On method options
+barriers,7,Manque de connaissances : ne sait pas où et comment y accéder,Lack of knowledge: On where and how to access
+barriers,8,Manque de connaissances : non spécifié,Lack of knowledge: Unspecified
+barriers,9,Désir d'avoir des enfants : nouveau couple souhaitant avoir un premier enfant,Desire to have children: New couple seeking first child(ren)
+barriers,10,Désir d'avoir des enfants : considère les enfants comme une réussite,Desire to have children: Seeing children as an achievement
+barriers,11,Désir d'avoir des enfants : concurrence entre coépouses,Desire to have children: Competition among co-wives
+barriers,12,Désir d'avoir des enfants : n'a pas fini d'avoir des enfants,Desire to have children: Not done with childbearing
+barriers,13,Désir d'avoir des enfants : nous voulons remplacer un enfant décédé,Desire to have children: Replacing children who passed
+barriers,14,Désir d'avoir des enfants : nous recherchons un genre spécifique,Desire to have children: Seeking a specific gender
+barriers,15,Désir d'avoir des enfants : nous tirons profit du fait d'avoir davantage d'enfants,Desire to have children: Benefit from children
+barriers,16,Désir d'avoir des enfants : non spécifié,Desire to have more children: Unspecified
+barriers,17,Peur des effets secondaires : Peur d'une modification du cycle menstruel,Fear of side effects: Fear of changes in bleeding pattern
+barriers,18,Peur des effets secondaires : Peur d'une augmentation des saignements,Fear of side effects: Fear of increase in bleeding
+barriers,19,Peur des effets secondaires : Peur de règles douloureuses,Fear of side effects: Fear of painful period
+barriers,20,Peur des effets secondaires : Peur de l'infertilité,Fear of side effects: Fear of infertility
+barriers,21,Peur des effets secondaires : Peur d'une prise de poids,Fear of side effects: Fear of weight gain
+barriers,22,Peur des effets secondaires : Peur d'une perte de poids,Fear of side effects: Fear of weight loss
+barriers,23,Peur des effets secondaires : Peur de complications à la naissance,Fear of side effects: Fear of birth complications
+barriers,24,Peur des effets secondaires : Peur que le préservatif se perde dans le corps,Fear of side effects: Fear of condom getting lost
+barriers,25,Peur des effets secondaires : Peur de mourir,Fear of side effects: Fear of death
+barriers,26,Peur des effets secondaires : Peur du cancer,Fear of side effects: Fear of cancer
+barriers,27,Peur des effets secondaires : Peur d'un arrêt cardiaque,Fear of side effects: Fear of cardiac arrest
+barriers,28,Peur des effets secondaires : Peur des vertiges et des maux de tête,Fear of side effects: Fear of dizziness and headache
+barriers,29,Peur des effets secondaires : Peur que le stérilet,Fear of side effects: Fear of IUD/ implant moving around or sticking to the body
+barriers,30,Peur des effets secondaires : Peur d'un gonflement,Fear of side effects: Fear of swelling/inflammation
+barriers,31,Peur des effets secondaires : Peur de la fatigue,Fear of side effects: Fear of tiredness
+barriers,32,Peur des effets secondaires : phobie des médicaments ou de tout corps étranger dans le corps,Fear of side effects: Phobia of drugs or anything foreign in the body
+barriers,33,Peur des effets secondaires : peur de la sécheresse,Fear of side effects: Fear of dryness
+barriers,34,Peur des effets secondaires : Peur de l'apparition de boutons,Fear of side effects: Fear of the development of pimples
+barriers,35,Peur des effets secondaires : Peur d'infections lors de la miction dans des endroits sales,Fear of side effects: Fear of infections when urinating in dirty places
+barriers,36,Peur des effets secondaires : faiblesse de l'utérus,Fear of side effects: Womb weakness
+barriers,37,Peur des effets secondaires : Peur d'une diminution du plaisir due à l'utilisation du préservatif,Fear of side effects: Fear of reduced pleasure due to condom use
+barriers,38,Peur des effets secondaires : non spécifiée,Fear of side effects: Unspecified
+barriers,39,Crainte d'une atteinte à l'intimité (parties intimes du corps),Fear of privacy invasion
+barriers,40,Contre la religion : ma religion n'autorise pas l'espacement des naissances,Against religion: Religion does not allow childbirth spacing
+barriers,41,Contre la religion : certains modèles religieux n'utilisaient pas de contraception,Against religion: Some religious role models did not use contraception
+barriers,42,Contre la religion : seul Dieu décide de l'espacement des naissances,Against religion: God decides on childbirth spacing
+barriers,43,Contre la religion : Dieu prendra bien soin de tous mes enfants,Against religion: God will take good care of children
+barriers,44,Contre la religion : non spécifié,Against religion
+barriers,45,"Utilisation de moyens contraceptifs traditionnels non-efficaces (plantes, médecine traditionnelle, etc.)",Use of non-effective traditional contraception
+barriers,46,Nécessité de mettre au monde tous les enfants,Need to birth all children out of the body
+barriers,47,Association des contraceptifs à la promiscuité,Associating contraceptives with promiscuity
+barriers,48,Stigmatisation,Stigma
+barriers,49,La famille désapprouve : désapprobation du mari,Family disapproves: Husband disapproves
+barriers,50,La famille désapprouve : désapprobation des parents,Family disapproves: Parents disapprove
+barriers,51,La famille désapprouve : les frères et sœurs désapprouvent,Family disapproves: Siblings disapprove
+barriers,52,La famille désapprouve : la famille du conjoint désapprouve,Family disapproves: Spouse’s family disapproves
+barriers,53,Doutes quant à l'efficacité des contraceptifs,Doubts about contraceptive effectiveness
+barriers,54,Le corps espace lui-même naturellement les naissances,Experience of body spacing births itself
+barriers,55,N’utilise pas de contraceptifs car allaitement,Not using contraceptives while breastfeeding
+barriers,56,Ma femme,My wife/I recently gave birth and don’t have my menstruation back yet
+barriers,57,Ma femme,Woman is in her menopause
+barriers,58,Ce sujet n'est pas important pour moi,It is not important
+drivers,-99,Je préfère ne pas répondre,Prefer not to say
+drivers,-88,Je ne sais pas,I dont know
+drivers,-22,"Autres raisons non mentionnées ici, Veuillez préciser",Other
+drivers,1,Meilleure prise en charge des enfants : capacité à éduquer,Better care for children: Ability to educate/train children
+drivers,2,Meilleure prise en charge des enfants : éducation morale,Better care for children: Moral upbringing
+drivers,3,Meilleure prise en charge des enfants : paiement des produits de première nécessité tels que la nourriture et les vêtements,Better care for children: Paying for necessities such as food and clothing
+drivers,4,Meilleure prise en charge des enfants : meilleur lien,Better care for children: Better bond with children
+drivers,5,Meilleure prise en charge des enfants : la mère a plus de temps à consacrer à chaque enfant,Better care for children: Mother has more time to care for each child
+drivers,6,Meilleure prise en charge des enfants : capacité à élever des enfants heureux,Better care for children: Ability to raise happy children
+drivers,7,Meilleure prise en charge des enfants : diminution de la capacité à s'occuper des enfants avec l'âge,Better care for children: Losing the ability to take care of children with old age
+drivers,8,Bonne santé de la mère : apparence plus saine et plus fraîche,Good mother health: Looking healthier and fresher
+drivers,9,Bonne santé de la mère : augmentation de la force physique grâce à des intervalles plus longs entre les grossesses,Good mother health: Increasing strength due to longer intervals between pregnancies
+drivers,10,Bonne santé de la mère : éviter les problèmes de santé majeurs pendant la grossesse et l'accouchement,Good mother health: Avoiding major health problems during pregnancy and birth
+drivers,11,Réduction du stress quotidien de la mère : éviter d'avoir trop d'enfants à charge en même temps,Reduce daily stress of mother: Avoid having too many children to take care of at the same time
+drivers,12,Réduction du stress quotidien de la mère : les enfants aident aux tâches ménagères,Reduce daily stress of mother: Children supporting with domestic chores
+drivers,13,Réduction du stress quotidien de la mère : la mère a davantage de temps pour se reposer dans la vie quotidienne,Reduce daily stress of mother: Mother has more time to rest in daily life
+drivers,14,La mère a davantage de temps en dehors des enfants : davantage de temps pour sa carrière,Mother has more time outside of taking care of children: More time for career
+drivers,15,La mère a davantage de temps en dehors des enfants : davantage de temps pour suivre les pratiques religieuses,Mother has more time outside of taking care of children: More time to follow religious practices
+drivers,16,La mère a davantage de temps en dehors des enfants : maison propre,Mother has more time outside of taking care of children: Clean home
+drivers,17,Bonne santé des enfants,Good child health
+drivers,18,Bonne situation financière de la famille : réduction des difficultés économiques,Good family finances: reducing economic hardship
+drivers,19,Bonne situation financière de la famille : aide,Good family finances: helping others
+drivers,20,Ont atteint le nombre d'enfants qu'ils souhaitaient,Finished giving birth to the number of children they want
+drivers,21,Éviter les grossesses hors mariage,Avoiding pregnancy outside of wedlock
+drivers,22,Éviter les maladies hors mariage,Avoiding disease outside of wedlock
+drivers,23,Éviter les grossesses non désirées,Avoiding unwanted pregnancy
+drivers,24,Avoir des relations intimes avec son conjoint : prévenir la promiscuité du mari,Engaging sexually with spouse: Preventing husband promiscuity
+drivers,25,Avoir des relations intimes avec son conjoint : éviter les conflits conjugaux dus à l'abstinence,Engaging sexually with spouse: Avoiding spousal conflict due to abstinence
+drivers,26,Avoir des relations intimes avec son conjoint : pimenter son mariage,Engaging sexually with spouse: Spice up marriage
+drivers,27,A eu des enfants tôt et a atteint le nombre d'enfants souhaité,Give birth early and achieve desired number of children
+drivers,28,Le mari souhaite espacer les naissances,Husband wants to space births of the children
+drivers,29,Davantage de respect entre les enfants (grâce à une différence d’âge plus grande),Respect among siblings
+drivers,30,Impossibilité de suivre son cycle menstruel naturel car n’est pas allée à l’école et ne sait pas compter,Can't count the natural menstruation cycle because did not go to school
+drivers,31,"Cycle menstruel irrégulier (au-delà de 28-32 jours), donc ne peut pas se fier aux méthodes calendaires",My menstruation cycle is irregular (outside of 28-32 days) so I cannot rely on calendar methods
+drivers,32,Méthode naturelle moins fiable,Natural method less reliable
+drivers,33,Bonne santé du père : le père évite de s'épuiser à force de tâches ménagères lorsque la mère est occupée à s'occuper des bébés ou qu'elle est trop fatiguée,My wife/my wives want to space births of the children

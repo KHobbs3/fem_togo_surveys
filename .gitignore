@@ -1,0 +1,15 @@
+# Pipeline outputs (aggregated, but not committed -- regenerate with
+# pipeline_output/, or host on Drive via DRIVE_FILE_IDS in src/data_loader.py).
+# The label translation tables are the exception and are versioned here.
+data/*
+!data/statement_labels.csv
+!data/driver_barrier_translations.csv
+!data/radio_translations.csv
+
+# Never commit participant data
+*_WIDE*
+*Full Data*
+
+.DS_Store
+__pycache__/
+.venv/

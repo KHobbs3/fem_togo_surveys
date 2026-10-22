@@ -1,0 +1,105 @@
+list_name,value,label_fr,label_en
+media_consumption,1,Radio,Radio
+media_consumption,2,Presse écrite,Print press
+media_consumption,3,Télévision,Television
+media_consumption,4,Podcasts,Podcasts
+media_consumption,5,Réseaux sociaux,Social media
+media_consumption,6,Whatsapp,WhatsApp
+media_consumption,7,SMS,SMS
+media_consumption,0,Aucun,None
+media_consumption,-88,Je ne sais pas,Don't know
+media_consumption,-99,Je préfère ne pas répondre,Prefer not to say
+media_consumption,-22,Autre : veuillez préciser,Other (please specify)
+media_consumption_method,1,Via un poste de radio à la maison,Via a radio set at home
+media_consumption_method,2,Via un poste de radio au travail,Via a radio set at work
+media_consumption_method,3,Via un poste de radio dans les lieux publics,Via a radio set in public places
+media_consumption_method,4,Via un poste de radio dans les transports,Via a radio set while travelling
+media_consumption_method,5,Via un poste de radio ou un téléphone portable appartenant à un proche,Via a radio set or mobile phone belonging to a relative
+media_consumption_method,6,"Via mon téléphone portable, utilisé comme un poste de radio","Via my own mobile phone, used as a radio"
+media_consumption_method,7,Via une application mobile : Whatsapp,Via a mobile app: WhatsApp
+media_consumption_method,8,Via une application mobile : Facebook,Via a mobile app: Facebook
+media_consumption_method,9,Via une application mobile : FM ou application radio,Via a mobile app: FM or radio app
+media_consumption_method,10,Via une application mobile : Autre,Via a mobile app: Other
+media_consumption_method,0,Aucun d'entre eux,None of these
+media_consumption_method,-88,Je ne sais pas,Don't know
+media_consumption_method,-99,Je préfère ne pas répondre,Prefer not to say
+media_consumption_method,-22,Autre : veuillez préciser,Other (please specify)
+favourite_format,1,"Narration (lorsqu'un ou plusieurs personnages fictifs racontent leur histoire dans un monologue, c'est-à-dire lorsqu'une seule personne parle). Tan kpikpa (hwenu e mɛ e è lin ɖɔ é ɖò tan yetɔn mɛ é ɖokpo alǒ hú mɔ̌ ɖɔ tan yetɔn ɖò xóɖɔɖókpɔ́ mɛɖokponɔ tɔn mɛ é, enɛ wɛ nyí ɖɔ mɛ ɖokpo géé wɛ ɖɔ xó).","Narration (one or more fictional characters tell their story in a monologue, i.e. a single person speaking)"
+favourite_format,2,Interview (un animateur interviewe un ou plusieurs experts),Interview (a host interviews one or more experts)
+favourite_format,3,Témoignages (des personnes réelles partagent leur vie personnelle),Testimonials (real people share their personal lives)
+favourite_format,4,Émission avec appels téléphoniques (le public appelle et des experts répondent à leurs questions),Call-in show (listeners call in and experts answer their questions)
+favourite_format,5,Série fictionnelle (des acteurs jouent les mêmes personnages dans plusieurs épisodes),Fictional series (the same actors play the same characters across multiple episodes)
+favourite_format,6,"Fiction unitaire (chaque programme est une histoire complète, avec des acteurs incarnant des personnages)",Standalone drama (each program is a complete story with actors playing characters)
+favourite_format,-88,Je ne sais pas,Don't know
+favourite_format,-99,Je préfère ne pas répondre,Prefer not to say
+favourite_format,-22,Autre : veuillez préciser,Other (please specify)
+radio_ad_saturation_list,1,"Cela ne me dérange pas, peu importe le nombre de fois que je l'entends","Doesn't bother me, no matter how many times I hear it"
+radio_ad_saturation_list,2,Après l'avoir entendue 1 à 2 fois,After hearing it 1-2 times
+radio_ad_saturation_list,3,Après l'avoir entendue 3 à 5 fois,After hearing it 3-5 times
+radio_ad_saturation_list,4,Après l'avoir entendue 6 à 10 fois,After hearing it 6-10 times
+radio_ad_saturation_list,5,Après l'avoir entendue plus de 10 fois,After hearing it more than 10 times
+radio_ad_saturation_list,-88,Je ne sais pas,Don't know
+radio_ad_saturation_list,-99,Je préfère ne pas répondre,Prefer not to say
+radio_language_benin,1,Fon,Fon
+radio_language_benin,2,Bariba,Bariba
+radio_language_benin,-88,Je ne sais pas : Un tuùn ǎ,Don't know
+radio_language_benin,-99,Je préfère ne pas répondre,Prefer not to say
+radio_language_benin,3,Dendi,Dendi
+radio_language_benin,4,Yoruba,Yoruba
+radio_language_benin,5,Anglais,English
+radio_language_benin,6,Français,French
+radio_language_benin,7,Adja,Adja
+radio_language_benin,8,Goun,Goun
+radio_language_benin,9,Ayizo,Ayizo
+radio_language_benin,10,Mahi,Mahi
+radio_language_benin,11,Nago,Nago
+radio_language_benin,12,Tem,Tem
+radio_language_benin,13,Fulfulde,Fulfulde
+radio_language_benin,14,Ditamari,Ditamari
+radio_language_benin,15,Yom,Yom
+radio_language_benin,-22,Autre : veuillez préciser,Other (please specify)
+radio_when,1,Entre 6 h et 9 h du matin,Between 6am and 9am
+radio_when,2,Entre 9 h du matin et midi,Between 9am and noon
+radio_when,3,Entre midi et 14 h,Between noon and 2pm
+radio_when,4,Entre 14 h et 18 h,Between 2pm and 6pm
+radio_when,5,Entre 18 h et 21 h,Between 6pm and 9pm
+radio_when,6,Entre 21 h et minuit,Between 9pm and midnight
+radio_when,7,Entre minuit et 6 h,Between midnight and 6am
+radio_when,8,Uniquement en cas d'actualité,Only when there's breaking news
+radio_when,-88,Je préfère ne pas répondre,Prefer not to say
+radio_when,-99,Je ne sais pas,Don't know
+radio_what,1,Je suis sur mon téléphone,On my phone
+radio_what,2,Je cuisine,Cooking
+radio_what,3,"Je fais des tâches ménagères (par exemple, le ménage, la lessive, la vaisselle)","Doing housework (e.g. cleaning, laundry, dishes)"
+radio_what,4,Je conduis,Driving
+radio_what,5,Je fais ou me fais faire ma coiffure ou des soins esthétiques,Doing or getting my hair/beauty care done
+radio_what,6,Je peins,Painting
+radio_what,7,Je prie,Praying
+radio_what,8,Je me prépare pour le travail,Getting ready for work
+radio_what,9,"Je lis (livres, journaux ou autres documents)","Reading (books, newspapers, or other materials)"
+radio_what,10,Je me repose,Resting / relaxing
+radio_what,11,Je passe du temps avec des amis,Spending time with friends
+radio_what,12,Je fais de la couture,Sewing
+radio_what,13,J’écris,Writing
+radio_what,14,"Rien, je n'écoute que la radio","Nothing, I only listen to the radio"
+radio_what,15,Caring for animals,Caring for animals
+radio_what,16,Working,Working
+radio_what,-88,Je ne sais pas,Don't know
+radio_what,-99,Je préfère ne pas répondre,Prefer not to say
+radio_what,-22,Autre : veuillez préciser,Other (please specify)
+radio_trust_likert,1,Je fais toujours confiance,I always trust it
+radio_trust_likert,2,"La plupart du temps, j'ai confiance","Most of the time, I trust it"
+radio_trust_likert,3,"Parfois, j'ai confiance",Sometimes I trust it
+radio_trust_likert,4,"La plupart du temps, je ne fais pas confiance","Most of the time, I don't trust it"
+radio_trust_likert,5,Je ne fais jamais confiance,I never trust it
+radio_trust_likert,-88,Je préfère ne pas répondre,Prefer not to say
+radio_trust_likert,-99,Je ne sais pas,Don't know
+radio_influence,2,Cela dépend des auditeurs ; certains ne changeront pas d'avis,It depends on the listener; some won't change their mind
+radio_influence,3,Cela dépend de la qualité,It depends on the quality/content of the ads or programs
+radio_influence,0,Non,No
+radio_influence,1,Oui,Yes
+radio_influence,-88,Je ne sais pas,Don't know
+radio_influence,-99,Je préfère ne pas répondre,Prefer not to say
+public_figures_benin,-88,Je ne sais pas,Don't know
+public_figures_benin,-99,Je préfère ne pas répondre,Prefer not to say
+public_figures_benin,-22,Autre : veuillez préciser,Other (please specify)
