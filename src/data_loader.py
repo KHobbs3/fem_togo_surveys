@@ -32,6 +32,7 @@ DRIVE_FILE_IDS = {
     "fp_reason_use.csv":                  "1i8KMoMBjkNHWfjP8YgrRwQRXaIHityXT",
     "fp_timing.csv":                      "1LOJSAJA7XwXTzGIL7d_SRTrahEzWyDJL",
     "fp_unmet.csv":                       "1Lg8QA8Ylxgoar4zAo3NSE0loDPiSuEQL",
+    "fp_headline.csv":                    "",  # paste Drive file ID once uploaded
     # Personality
     "personality_decision_confident.csv": "1QM2o-IDvN_LDgAd8Xf21dwPqp54vuMd5",
     "personality_forming_beliefs.csv":    "1Xl9-4p-NAnpFEOX0xI8RoOdMmdTH0pfO",
@@ -193,6 +194,10 @@ def load_fp_nonuse_reasons():
 
 def load_fp_unmet():
     return _load("fp_unmet.csv", index_col=0)
+
+
+def load_fp_headline():
+    return _load("fp_headline.csv")
 
 
 # ── Personality page ──────────────────────────────────────────────────────────

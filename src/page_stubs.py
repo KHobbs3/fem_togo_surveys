@@ -24,3 +24,11 @@ def render_phone_pulse_stub(page_name: str):
         "etl_pp_*.py modules, neither of which exist for Togo yet).",
         ["Depends on the specific phone pulse questionnaire design"],
     )
+    if page_name == "Family Planning":
+        from src import key_indicators as ki
+        st.markdown("#### Key indicators")
+        st.caption("Same indicators as the Formative Research Family Planning page; "
+                   "filled in once a phone pulse is fielded.")
+        ki.show(ki.change_table(None, [(label, lambda m: ki.PENDING)
+                                       for label in ki.HEADLINE_POPULATIONS.values()],
+                                      metrics=ki.PULSE_METRICS))

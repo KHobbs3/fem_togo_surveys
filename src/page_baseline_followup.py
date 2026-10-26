@@ -1,5 +1,7 @@
 import streamlit as st
 from src.page_stubs import stub_card
+from src.data_loader import load_fp_headline
+from src import key_indicators as ki
 
 # 2026-09-10: pulled out of the Phone Pulse tab and promoted to a top-level
 # "home page" (see app.py) per the user's request -- this is meant to be the
@@ -68,6 +70,32 @@ METRIC_SECTIONS = [
 ]
 
 
+def _render_key_indicators(mode):
+    st.subheader("Key indicators")
+    df = load_fp_headline()
+    if df is None or df.empty:
+        st.info("Baseline key indicators pending: run the family_planning pipeline and "
+                "upload fp_headline.csv (see data_loader.py).")
+        return
+    st.caption(
+        "Baseline: full formative sample, survey-weighted, estimate (95% CI). Follow-up "
+        "rounds will be filled in once a phone pulse is fielded"
+        + (" -- the longitudinal baseline will then be restricted to the phone panel "
+           "and re-weighted for who could be reached." if mode == "Longitudinal" else ".")
+    )
+
+    def baseline(pop):
+        def f(metric):
+            r = df[(df["population"] == pop) & (df["metric"] == metric)]
+            return None if r.empty else (r.iloc[0]["value"], r.iloc[0]["ci_low"], r.iloc[0]["ci_high"])
+        return f
+
+    for pop, label in ki.HEADLINE_POPULATIONS.items():
+        st.markdown(f"**{label}**")
+        waves = [("Baseline", baseline(pop))] + [(w, lambda m: ki.PENDING) for w in WAVES[1:]]
+        ki.show(ki.change_table(pop, waves))
+
+
 def render():
     st.header("Baseline vs. Follow-up")
     st.caption(
@@ -89,6 +117,8 @@ def render():
         + ("  *(panel members only)*" if mode == "Longitudinal" else "  *(each wave's own respondents)*")
     )
 
+    st.divider()
+    _render_key_indicators(mode)
     st.divider()
     st.info(
         "No phone pulse follow-up has been fielded for Togo yet -- baseline is the "
