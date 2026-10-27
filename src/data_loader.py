@@ -32,7 +32,7 @@ DRIVE_FILE_IDS = {
     "fp_reason_use.csv":                  "1i8KMoMBjkNHWfjP8YgrRwQRXaIHityXT",
     "fp_timing.csv":                      "1LOJSAJA7XwXTzGIL7d_SRTrahEzWyDJL",
     "fp_unmet.csv":                       "1Lg8QA8Ylxgoar4zAo3NSE0loDPiSuEQL",
-    "fp_headline.csv":                    "",  # paste Drive file ID once uploaded
+    "fp_headline.csv":                    "1seshwUuqg7u1JHy7tjI_FXhEDlayxDC-",
     # Personality
     "personality_decision_confident.csv": "1QM2o-IDvN_LDgAd8Xf21dwPqp54vuMd5",
     "personality_forming_beliefs.csv":    "1Xl9-4p-NAnpFEOX0xI8RoOdMmdTH0pfO",
@@ -167,15 +167,6 @@ def load_radio_by_state():
 
 
 # ── Family planning page ──────────────────────────────────────────────────────
-# Headline indicators with 95% CIs (mCPR, unmet need, unmet demand, demand
-# satisfied, awareness) for the full sample and subgroups -- fp_headline.csv.
-FP_HEADLINE_FILE_ID = "1seshwUuqg7u1JHy7tjI_FXhEDlayxDC-"
-
-def load_fp_headline():
-    try:
-        return _load(FP_HEADLINE_FILE_ID, index_col=0)
-    except Exception:
-        return None
 
 def load_fp_funnel():
     return _load("fp_funnel.csv", index_col=0)
@@ -205,6 +196,8 @@ def load_fp_unmet():
     return _load("fp_unmet.csv", index_col=0)
 
 
+# Headline indicators with 95% CIs (mCPR, unmet need, unmet demand, demand
+# satisfied, awareness) for the full sample and all women.
 def load_fp_headline():
     return _load("fp_headline.csv")
 
