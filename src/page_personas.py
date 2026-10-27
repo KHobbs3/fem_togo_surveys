@@ -175,8 +175,9 @@ def _top_real_value(df_profile, persona_id, col):
     """Best non-'Unknown' value for one persona/column from its profile
     breakdown (top-3 by share), or None if it's genuinely all-Unknown.
 
-    Needed because top_driver/top_barrier only apply to half the sample each
-    (top_driver=users only, top_barrier=non-users only) -- k-modes' centroid
+    Needed because top_driver/top_barrier each apply to only part of the sample
+    (top_driver=current users only; top_barrier=everyone else -- never-users
+    and past users) -- k-modes' centroid
     for that column is a legitimate joint-optimization mode across all 7
     clustering variables, but for a column this fragmented (dozens of
     specific reasons, each a small slice) 'Unknown' can win that slot even

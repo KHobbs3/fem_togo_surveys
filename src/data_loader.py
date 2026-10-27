@@ -55,6 +55,7 @@ DRIVE_FILE_IDS = {
     "culture_clusters_elbow.csv":         "1CPK6t0veNPLWEXq92QDfYHUwI8anDzGp",
     # Drivers & barriers table (dated file; see load_drivers_barriers)
     "drivers_barriers_table.csv":         "1AyL7hVB62nuBjKtJnUba_dpyHP7ylgEY",  # Togo_drivers-barriers_table_26_10_22.csv
+    "driver_barrier_groups.csv":          "1sCNn_ZRl38xtz-6TlSilpkbG394XTFda",
     # Respondents / statements
     "respondents_profile.csv":            "1CA2MGH2Mahfh0g-gg6r4nP3sbeG0fIy2",
     "statements_heatmap.csv":             "1ulpvgRj8k4mja4VVZClGwF75KZ3pfmBY",
@@ -361,3 +362,8 @@ URBAN_RURAL = ["Rural", "Semi-urbain", "Urbain"]
 # Regions = Togo's sampling strata (`province`), south to north. Mirrors
 # REGIONS / PROVINCE_TO_REGION in pipeline_output/pipeline/config.py.
 REGIONS = ["Maritime", "Plateaux", "Centrale", "Kara"]
+
+
+def load_driver_barrier_groups():
+    """Parent-category groups of drivers/barriers (pipeline: --pages driver_barrier_groups)."""
+    return _load("driver_barrier_groups.csv", index_col=0)
