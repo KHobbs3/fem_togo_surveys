@@ -20,8 +20,8 @@ HEADLINE_METRICS = {
     "unmet_need":            "Unmet need",
     "unmet_demand":          "Unmet demand",
     "demand_satisfied":      "Demand satisfied (modern methods)",
-    "aware_modern":          "Awareness of methods (all)",
-    "aware_modern_nonusers": "Awareness of methods (non-users)",
+    "aware_modern":          "Named a modern method (all)",
+    "aware_modern_nonusers": "Named a modern method (not currently using)",
 }
 
 # Phone Pulse adds campaign content recall: heard FP programmes/ads on the

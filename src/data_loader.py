@@ -63,7 +63,8 @@ DRIVE_FILE_IDS = {
     "driver_barrier_translations.csv":    "1rbYmPmbWZo1xijevno7XbmXY9vr_KF38",
     "radio_translations.csv":             "1WYqe-MqD_M1OVHtpGjbRM7xokOimQxUF",
     # Radio
-    f"{COUNTRY}_question_table_by_station_*.csv":               "1NBj3dEm6xNNv9lWoQsB61vWmFdC2iLmr",
+    # Drive copy is .xlsx (Togo_question_table_by_station_26_10_26.xlsx); _read_drive handles it
+    f"{COUNTRY}_question_table_by_station_*.csv":               "1FabDqaI3Q-eGHOfhoVGlctnlTIoEMT9f",
     f"{COUNTRY}_question_table_by_state_*.csv":                 "1e1OhI-fsBZYZz9j4fBV3US2_w4rES-v3"
 }
 
@@ -94,6 +95,9 @@ def _read_drive(name, file_id, **kwargs):
             "sharing to \"Anyone with the link\" (Viewer) and check its ID in DRIVE_FILE_IDS."
         )
         return None
+    # An .xlsx is a zip archive -- read its first sheet instead of parsing it as CSV.
+    if raw[:2] == b"PK":
+        return pd.read_excel(io.BytesIO(raw), **kwargs)
     return pd.read_csv(io.BytesIO(raw), **kwargs)
 
 

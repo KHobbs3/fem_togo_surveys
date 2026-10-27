@@ -238,6 +238,17 @@ def _unmet_bar_by_group(df_unmet, split_col, key):
 
 # ── Funnel ────────────────────────────────────────────────────────────────────
 
+# The funnel splits on the four-way `use` segment, where "nonuser" means never
+# used AND not considering it -- narrower than the headline table's "not
+# currently using". Spelled out so the two aren't read as the same group.
+FUNNEL_USE_LABELS = {
+    "user":        "Current users",
+    "past_user":   "Past users",
+    "future_user": "Never used, considering",
+    "nonuser":     "Never used, not considering",
+}
+
+
 def render_funnel(df_funnel, split_col):
     st.markdown("**Contraceptive use funnel**")
     if df_funnel is None or df_funnel.empty:
@@ -251,6 +262,7 @@ def render_funnel(df_funnel, split_col):
         .unique()
         .tolist()
     )
+    labels = FUNNEL_USE_LABELS if split_col == "use" else {}
     # Normalise: treat "all", "All", "ALL" as the same
     normalised = {}
     for g in raw_groups:
@@ -258,9 +270,13 @@ def render_funnel(df_funnel, split_col):
         if key == "all":
             normalised["All"] = "all"   # display → actual value
         else:
-            normalised[g.strip()] = g.strip()
+            normalised[labels.get(g.strip(), g.strip())] = g.strip()
 
-    grp_options = ["All"] + sorted(k for k in normalised if k != "All")
+    order = list(labels.values())
+    grp_options = ["All"] + sorted(
+        (k for k in normalised if k != "All"),
+        key=lambda k: (order.index(k) if k in order else len(order), k),
+    )
     selected = st.selectbox("Filter group", grp_options, key="fp_funnel_grp")
     grp_val = normalised.get(selected, selected.lower())
 
@@ -371,7 +387,7 @@ def render_headline(df_headline):
     n = df_headline.pivot(index="metric", columns="population", values="n_unweighted")
     n_note = " · ".join(
         f"{label}: N = {int(n.loc['mcpr', pop])} "
-        f"({int(n.loc['aware_modern_nonusers', pop])} non-users)"
+        f"({int(n.loc['aware_modern_nonusers', pop])} not currently using)"
         for pop, label in ki.HEADLINE_POPULATIONS.items() if pop in n.columns
     )
     with st.expander("How each indicator is calculated"):
@@ -390,10 +406,13 @@ def render_headline(df_headline):
             "contraception in future (`future_intent`).\n"
             "- **Demand satisfied** — mCPR ÷ (total CPR [any method] + unmet need), "
             "the official DHS formula.\n"
-            "- **Awareness of methods (all)** — named at least one modern method "
-            "(`known_contraceptive_options`).\n"
-            "- **Awareness of methods (non-users)** — same, among respondents not "
-            "currently using any method (`current_use` ≠ Yes).\n\n"
+            "- **Named a modern method (all)** — named at least one modern method "
+            "(`known_contraceptive_options`); same as the funnel's \"...and named a "
+            "modern method\" stage.\n"
+            "- **Named a modern method (not currently using)** — same, among "
+            "respondents not currently using any method (`current_use` ≠ Yes): past "
+            "users and never-users alike. Wider than the funnel's \"Never used\" "
+            "groups, so expect a higher figure.\n\n"
             "**95% confidence intervals** account for the clustered sample design: "
             "the surveyed settlements are resampled within each region 1,000 times "
             "(Rao–Wu bootstrap) and the interval is the middle 95% of the resulting "
