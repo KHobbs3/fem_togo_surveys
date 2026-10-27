@@ -167,6 +167,15 @@ def load_radio_by_state():
 
 
 # ── Family planning page ──────────────────────────────────────────────────────
+# Headline indicators with 95% CIs (mCPR, unmet need, unmet demand, demand
+# satisfied, awareness) for the full sample and subgroups -- fp_headline.csv.
+FP_HEADLINE_FILE_ID = "1seshwUuqg7u1JHy7tjI_FXhEDlayxDC-"
+
+def load_fp_headline():
+    try:
+        return _load(FP_HEADLINE_FILE_ID, index_col=0)
+    except Exception:
+        return None
 
 def load_fp_funnel():
     return _load("fp_funnel.csv", index_col=0)
