@@ -54,7 +54,7 @@ DRIVE_FILE_IDS = {
     "culture_clusters_profile.csv":       "1j5EBZBKaUs6zuGByJWDcUas1UUxRkheq",
     "culture_clusters_elbow.csv":         "1CPK6t0veNPLWEXq92QDfYHUwI8anDzGp",
     # Drivers & barriers table (dated file; see load_drivers_barriers)
-    "drivers_barriers_table.csv":         "1AyL7hVB62nuBjKtJnUba_dpyHP7ylgEY",  # Togo_drivers-barriers_table_26_10_22.csv
+    "drivers_barriers_table.csv":         "18virtBtjUK5pe2XfRX8-HVI0WhTN_Rdq",  # Togo_drivers-barriers_table_26_10_27.csv
     "driver_barrier_groups.csv":          "1sCNn_ZRl38xtz-6TlSilpkbG394XTFda",
     # Respondents / statements
     "respondents_profile.csv":            "1CA2MGH2Mahfh0g-gg6r4nP3sbeG0fIy2",
@@ -64,9 +64,8 @@ DRIVE_FILE_IDS = {
     "driver_barrier_translations.csv":    "1rbYmPmbWZo1xijevno7XbmXY9vr_KF38",
     "radio_translations.csv":             "1WYqe-MqD_M1OVHtpGjbRM7xokOimQxUF",
     # Radio
-    # Drive copy is .xlsx (Togo_question_table_by_station_26_10_26.xlsx); _read_drive handles it
-    f"{COUNTRY}_question_table_by_station_*.csv":               "1FabDqaI3Q-eGHOfhoVGlctnlTIoEMT9f",
-    f"{COUNTRY}_question_table_by_state_*.csv":                 "1e1OhI-fsBZYZz9j4fBV3US2_w4rES-v3"
+    f"{COUNTRY}_question_table_by_station_*.csv":               "1vsFJ7zYjCODf--386TiEq20u0gQ3xoxI",  # Togo_question_table_by_station_26_10_27.csv
+    f"{COUNTRY}_question_table_by_state_*.csv":                 "1i7DczR9qQRApgPIA1EMsslVe3QhKBjNA"  # Togo_question_table_by_state_26_10_27.csv
 }
 
 
